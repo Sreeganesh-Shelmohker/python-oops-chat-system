@@ -11,6 +11,7 @@ class Message:
         self.content = content
         self.id = Message.message_counter
         Message.message_counter += 1
+
     def __str__(self):
         return f"({self.id}) {self.sender.username}: {self.content}"
     
@@ -22,6 +23,7 @@ class User:
     def __init__(self, username):
         self.username = username
         self.chatroom = None
+
     def join_chatroom(self, chatroom):
         if self.chatroom:
             print(f"{self.username} is already in a chatroom.")
@@ -29,14 +31,15 @@ class User:
             chatroom.add_user(self)
             self.chatroom = chatroom
             print(f"{self.username} joined {chatroom.name}")
+
     def leave_chatroom(self):
         if not self.chatroom:
-
             print(f"{self.username} is not in any chatroom.")
         else:
             self.chatroom.remove_user(self)
             print(f"{self.username} left {self.chatroom.name}")
             self.chatroom = None
+
     def send_message(self, content):
         if not self.chatroom:
             print(f"{self.username} cannot send a message (not in a chatroom).")
@@ -52,14 +55,18 @@ class ChatRoom:
         self.name = name
         self.users = []
         self.messages = []
+
     def add_user(self, user):
         self.users.append(user)
+
     def remove_user(self, user):
         self.users.remove(user)
+
     def broadcast(self, sender, content):
         message = Message(sender, content)
         self.messages.append(message)
         print(message)   # Show message to all users
+
     def show_chat_history(self):
         print(f"\nChat History of {self.name}:")
         for msg in self.messages:
