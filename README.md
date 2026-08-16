@@ -14,6 +14,10 @@ Object-Oriented Programming in Python.
 - Object Relationships
 - `__str__()`
 
+## Class Diagram
+
+![Class diagram for chat system](images/class_diagram.png)
+
 ## Features
 
 - Create users
