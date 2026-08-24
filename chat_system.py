@@ -5,7 +5,7 @@
 # -------------------------------
 
 class Message:
-    message_counter = 1   # simple counter
+    message_counter = 1   # simple counter for number of messages
     def __init__(self, sender, content):
         self.sender = sender
         self.content = content
