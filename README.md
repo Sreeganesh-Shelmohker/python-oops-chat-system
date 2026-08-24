@@ -13,10 +13,12 @@ Object-Oriented Programming in Python.
 - Encapsulation
 - Object Relationships
 - `__str__()`
+- 
 
 ## Class Diagram
 
 ![Class diagram for chat system](images/class_diagram.png)
+
 
 ## Features
 
